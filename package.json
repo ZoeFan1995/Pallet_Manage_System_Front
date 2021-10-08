@@ -1,0 +1,19 @@
+{
+  "name": "pallet_manage_system_front",
+  "version": "1.0.0",
+  "description": "因應真口味龍泉廠棧板管理需求，故開發此系統。",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://WEBAP-SRV:3000/Soft-Group/Pallet_Manage_System_Front.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {}
+}

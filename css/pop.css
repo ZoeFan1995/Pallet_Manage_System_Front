@@ -1,0 +1,715 @@
+
+#mask {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255,0.4);
+    z-index: 50;
+}
+#pop {
+    z-index: 55;
+    position: fixed;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px #666;
+    margin-left: 20px;
+}
+#popBox {
+    display: flex;
+    align-items: center;
+}
+
+/*關閉icon*/
+#pop > .fa-close::before,
+#inventoryPop > .fa-close::before,
+#IdNamePop > .fa-close::before{
+    color: #4F5D75;
+    font-size: 28px;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+}
+#pop > .fa-close:hover::before,
+#inventoryPop > .fa-close:hover::before,
+#IdNamePop > .fa-close:hover::before{
+    color: #648F84;
+}
+/*送出btn*/
+.fa-checked::before {
+    color: #FFFFFF;
+    font-size: 17px;
+}
+#pop > button ,
+#inventoryPop > button,
+#IdNamePop > button{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8ECAE6;
+    width: 64px;
+    height: 32px;
+    border: transparent;
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+#pop > button:hover,
+#inventoryPop > button:hover{
+    color: #FFFFFF;
+    background-color: #648F84;
+}
+/*title*/
+#pop > h6, 
+#inventoryPop > h6,
+#IdNamePop > h6{
+    display: inline-flex;
+    font-size: 18px;
+    padding: 32px 10px 2px 10px;
+    margin: 0px 90px 16px;
+    box-shadow: 0px 2px 0px #4F5D75;
+    align-items: center;
+}
+#pop > h6 > i {
+    margin-right: 8px;
+}
+/*輸入欄*/
+#pop input{
+    outline: transparent;
+    border: transparent;
+    padding: 8px;
+    margin: 8px 0px;
+    background: #FFFFFF;
+    border: 1px solid #648F84;
+    color: #4F5D75;
+    border-radius: 4px;
+    font-size: 16px;
+    caret-color: #87BBA2;
+}
+#pop input:focus{
+    border: 1px solid #87BBA2;
+    box-shadow: 0px 0px 3px #87BBA2;
+}
+/*空值，改變顏色*/
+.change::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #F23030;
+    opacity: .9;
+}
+.change:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #F23030;
+}
+.change::-ms-input-placeholder { /* Microsoft Edge */
+color: #F23030;
+}
+
+/*新增廠商表單css*/
+.add_supplier{
+    width: 300px;
+    height: 360px;
+    background: #FFFFFF;
+}
+.add_supplier > input{
+    width: 260px;
+    height: 36px;
+}
+.add_supplier > select {
+    width: 260px;
+    height: 36px;
+    margin: 8px 0px ;
+    font-size: 16px;
+    color: #4F5D75;
+    outline: unset;
+    border: 1px solid #648F84;
+    border-radius: 4px;
+}
+.add_supplier > select:focus {
+    border: 1px solid #87BBA2 ;
+    box-shadow: 0px 0px 3px #87BBA2;
+} 
+/*新增棧板表單css*/
+.add_pallet{
+    width: 300px;
+    height: 200px;
+    background: #FFFFFF;
+}
+#pop.add_pallet > input {
+    width: 130px;
+    height: 36px;
+    margin: 8px 0px 0px ;
+}
+.add_pallet > select{
+    width: 140px;
+    height: 36px;
+    outline: transparent;
+    border: transparent;
+    padding: 8px;
+    margin: 8px 0px 0px;
+    color: #4F5D75;
+    font-size: 16px;
+    border-radius: 4px;
+    background: #FFFFFF;
+    border: 1px solid #648F84;
+}
+
+
+/*刪除pallet資料css*/
+.delet_pallet {
+    width: 390px;
+    height: 130px;
+    padding: 20px 30px;
+    font-size: 16px;
+    color: #2D3142;
+    background: #FCD6D6;
+    border: 2px #F23030 solid;
+}
+.delet_pallet > p{
+    text-align: start;
+}
+.delet_pallet > p >span{
+    font-weight: 700;
+}
+#pop.delet_pallet > button:nth-child(2) {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    background-color: #F23030;
+    width: 88px;
+    height: 32px;
+    border: transparent;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+#pop.delet_pallet > button:nth-child(3) {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    background-color: #648F84;
+    width: 88px;
+    height: 32px;
+    border: transparent;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+#pop.delet_pallet > button:nth-child(2):hover,
+#pop.delet_pallet > button:nth-child(3):hover {
+    box-shadow: 0px 0px 2px 1px #2D3142;
+}
+
+/*刪除list css 與 刪除type css*/
+.delet_list,
+.delet_type{
+    width: 340px;
+    height: 130px;
+    padding: 20px 30px;
+    font-size: 16px;
+    color: #2D3142;
+    background: #FCD6D6;
+    border: 2px #F23030 solid;
+}
+.delet_list > p,
+.delet_type > p{
+    text-align: start;
+}
+#pop.delet_list > button:nth-child(2),
+#pop.delet_type > button:nth-child(2) {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    background-color: #F23030;
+    width: 88px;
+    height: 32px;
+    border: transparent;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+#pop.delet_list > button:nth-child(3),
+#pop.delet_type > button:nth-child(3) {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    background-color: #648F84;
+    width: 88px;
+    height: 32px;
+    border: transparent;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+#pop.delet_list > button:nth-child(2):hover,
+#pop.delet_list > button:nth-child(3):hover,
+#pop.delet_type > button:nth-child(2):hover,
+#pop.delet_type > button:nth-child(3):hover {
+    box-shadow: 0px 0px 2px 1px #2D3142;
+}
+
+
+/*新增棧板借出表單css*/
+/*title*/
+#pop.add_form {
+    width: 790px;
+    padding: 0px 20px 60px;
+    height: fit-content;
+    background: #FFFFFF;
+    text-align: justify;
+    position: relative;
+}
+#pop.add_form > h6 {
+    width: 100%;
+    height: 50px;
+    padding: 20px 10px 2px 10px;
+    margin:  0px auto;
+    justify-content: center;
+}
+#pop > h6 > i {
+    margin-right: 8px;
+}
+.add_form > div{
+    display: flex;
+    margin-top: 20px;
+    text-align: start;
+}
+
+/*fram_left*/
+#form_left {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 300px;
+    align-content: flex-start;
+}
+#form_left > .search_warehouse {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background-color: #87BBA2;
+    margin: 30px 0px 0px 10px;
+}
+#form_left >  .search_warehouse > i {
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+#form_left > span:nth-of-type(1),
+#form_left > span:nth-of-type(3){
+    width: 220px;
+}
+#form_left > span:nth-of-type(1) >input,
+#form_left > span:nth-of-type(3) >input{
+    width: 100%;
+}
+#form_left > input:nth-of-type(1){
+    width: 292px;
+    height: 36px;
+    margin-right: 8px;
+}
+#form_left > span:nth-of-type(5){
+    width: 292px;
+    height: fit-content;
+    text-align: start;
+    margin-right: 8px;
+}
+#form_left > span:nth-of-type(5) >input{
+    width: 100%;
+    height: 36px;
+}
+#form_left > span:nth-of-type(6){
+    width: 292px;
+    margin-right: 8px;
+}
+#form_left > span:nth-of-type(6) > textarea{
+    width: 100%;
+    height: 60px;
+    outline: transparent;
+    border: transparent;
+    padding: 4px 8px;
+    margin: 8px 0px;
+    background: #FFFFFF;
+    border: 1px solid #648F84;
+    color: #4F5D75;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Microsoft JhengHei';
+    caret-color: #87BBA2;
+}
+#form_left > span:nth-of-type(6) > textarea:focus{
+    border: 1px solid #87BBA2;
+    box-shadow: 0px 0px 3px #87BBA2;
+}
+
+/*fram_right*/
+#form_right {
+    display: inline-flex;
+    width: 500px;
+    flex-direction: column;
+}
+#form_right > h5{
+    font-size: 16px;
+    color: rgba(242, 48, 48, 0.8);
+    margin-bottom: 8px;
+}
+#pallet_search {
+    width: 300px;
+    display: inline-flex;
+}
+#pallet_search span:nth-of-type(1){
+    width: 160px;
+}
+#pallet_search span:nth-of-type(1) > input{
+    width: 160px;
+}
+.add_in,
+.search_pallet {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background-color: #87BBA2;
+    margin: 30px 0px 0px 16px;
+}
+.add_in > i,
+.search_pallet > i {
+    color: #FFFFFF;
+    font-size: 24px;
+}
+#form_right > #pallet_box{
+    width: 450px;
+    border: 1px solid #648F84;
+    border-radius: 4px;
+    overflow: scroll;
+    overflow-x:hidden
+}
+#form_right > #pallet_box.discard{
+    height: 230px;
+}
+#form_right > #pallet_box.lend{
+    height: 280px;
+}
+#form_right > #pallet_box.return{
+    height: 230px;
+}
+#form_right > #pallet_box > span {
+    width: 95px;
+    display: inline-block;
+    position: relative;
+    color: #4F5D75;
+    font-size: 16px;
+    font-family: 'Microsoft JhengHei';
+    font-weight: 300;
+    padding: 0px 8px;
+    margin: 8px 4px;
+    box-shadow: 0px 0.4px #87BBA2;
+    cursor: pointer;
+} 
+#form_right > #pallet_box > span:hover{
+    box-shadow: 0px 1px #87BBA2;
+}
+#form_right > #pallet_box > span > i{
+    position: absolute;
+    right: 6px;
+    bottom: 4px;
+    color: #4F5D75;
+    font-size: 16px;
+    opacity: 0.1;
+}
+#form_right > #pallet_box > span > i:hover{
+    opacity: 1;
+}
+
+/*Discard*/
+#form_left > span:nth-of-type(1).discard_date{
+    width: 292px;
+    height: fit-content;
+    text-align: start;
+    margin-right: 8px;
+}
+#form_left > span:nth-of-type(1).discard_date >input{
+    width: 100%;
+    height: 36px;
+}
+#form_left > span:nth-of-type(2).reason{
+    width: 292px;
+    margin-right: 8px;
+}
+#form_left > span:nth-of-type(3).remark{
+    width: 292px;
+    margin-right: 8px;
+}
+#form_left > span:nth-of-type(2).reason > textarea{
+    height: 130px;
+}
+#form_left > span:nth-of-type(3).remark > textarea{
+    height: 36px;
+}
+#form_left > span:nth-of-type(2).reason > textarea,
+#form_left > span:nth-of-type(3).remark > textarea{
+    width: 100%;
+    outline: transparent;
+    border: transparent;
+    padding: 4px 8px;
+    margin: 8px 0px;
+    background: #FFFFFF;
+    border: 1px solid #648F84;
+    color: #4F5D75;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Microsoft JhengHei';
+    caret-color: #87BBA2;
+}
+#form_left > span:nth-of-type(2).reason > textarea:focus,
+#form_left > span:nth-of-type(3).remark > textarea:focus{
+    border: 1px solid #87BBA2;
+    box-shadow: 0px 0px 3px #87BBA2;
+}
+
+/*在庫棧板搜尋*/
+#inventoryPop {
+    width: 360px;
+    height: 470px;
+    padding: 20px;
+    margin-left: 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    z-index: 60;
+}
+#inventoryPop > h6 {
+    color: #87BBA2;
+    padding: 0px 0px 2px;
+    margin: 0;
+    box-shadow: 0px 2px 0px #87BBA2;
+    display: block;
+}
+#inventoryPop > select{
+    width: 200px;
+    height: 32px;
+    outline: transparent;
+    border: transparent;
+    padding: 0px 8px;
+    margin: 20px 0px 8px;
+    color: #4F5D75;
+    font-size: 16px;
+    border-radius: 4px;
+    background: #FFFFFF;
+    border: 1px solid #87BBA2;
+}
+#inventoryPop > #inventory_form {
+    width: 326px;
+    height: 280px;
+    border: 1px rgba(135, 187, 162,0.5) solid;
+    border-radius: 4px;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#inventoryPop > #inventory_form > span{
+    color: #4F5D75;
+    font-family: 'Microsoft JhengHei';
+    font-weight: 300;
+    box-shadow:  0px 1px #87BBA2;
+    margin: 8px 2px;
+    padding: 0px 6px;
+    height: 24px;
+}
+#inventoryPop #inventory_form > span >input {
+    margin-right: 6px;
+}
+
+/*廠別代號搜尋*/
+#IdNamePop {
+    width: 360px;
+    height: 470px;
+    padding: 20px;
+    margin-left: 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    z-index: 60;
+}
+#IdNamePop > h6 {
+    color: #87BBA2;
+    padding: 0px 0px 2px;
+    margin: 0;
+    box-shadow: 0px 2px 0px #87BBA2;
+    display: block;
+}
+#IdNamePop > input {
+    outline: transparent;
+    border: transparent;
+    width: 240px;
+    height: 32px;
+    margin: 20px 0px 8px ;
+    padding: 0px 8px;
+    background: #FFFFFF;
+    border: 1px solid #87BBA2;
+    color: #4F5D75;
+    border-radius: 4px;
+    font-size: 16px;
+    caret-color: #87BBA2;
+}
+#IdNamePop input:focus{
+    border: 1px solid #87BBA2;
+    box-shadow: 0px 0px 3px #87BBA2;
+}
+#IdNamePop > #IdName_form {
+    width: 320px;
+    height: 280px;
+    border: 1px rgba(135, 187, 162,0.5) solid;
+    border-radius: 4px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    overflow: scroll;
+}
+#IdNamePop > #IdName_form > input {
+    outline: transparent;
+    color: #4F5D75;
+    font-family: 'Microsoft JhengHei';
+    font-weight: 300;
+    font-size: 16px;
+    width: 400px;
+    border: 1px solid #87BBA2;
+    margin: 4px 4px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#IdNamePop > #IdName_form > input.selected{
+    background-color: #648F84;
+    color: #FFFFFF;
+}
+
+/*編號錯誤css*/
+#pop > h5 {
+    color: rgba(242, 48, 48, 0.8);
+    font-size: 16px;
+    text-align: end;
+    padding-right: 20px;
+}
+#form_left > h5 {
+    color: rgba(242, 48, 48, 0.8);
+    font-size: 16px;
+    text-align: end;
+    padding-bottom: 8px;
+
+}　
+
+/*成功訊息*/
+.alert {
+    color: #FFFFFF!important;
+}
+/*逾時訊息*/
+#timeout{
+    position: absolute;
+    z-index: 55;
+    background-color: rgb(236, 240, 240);
+    padding: 20px 20px;
+    border-radius: 6px;
+    border: 2px #648F84 solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#timeout > span {
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Microsoft JhengHei';
+    color: #4F5D75;
+    margin-bottom: 10px;
+    cursor: default;
+}
+#timeout > button {
+    width: 60px;
+    height: 30px;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    border: transparent;
+    outline: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #457B9D;
+}
+#timeout > button:hover{
+    color: #FFFFFF;
+    background-color: #648F84;
+}
+
+/*新增使用者表單css*/
+.add_user > input {
+    width: 260px;
+    height: 36px;
+}
+.add_user{
+    width: 300px;
+    height: 360px;
+    background: #FFFFFF;
+}
+/*新增使用者權限css*/
+.add_permission{
+    width: 280px;
+    height: 200px;
+    background: #FFFFFF;
+}
+#pop.add_permission > h6 {
+    margin: 0px 0px 16px;
+    box-shadow: 0px 2px 0px #87BBA2;
+    color: #87BBA2;
+}
+#pop.add_permission > h5 {
+    padding-right: 64px;
+}
+#pop.add_permission > input {
+    width: 150px;
+    height: 36px;
+    margin: 8px 0px 0px ;
+}
+
+/*新增棧板類型css*/
+.add_pallet_type{
+    width: 260px;
+    height: 310px;
+    background: #FFFFFF;
+}
+.add_supplier_type{
+    width: 260px;
+    height: 310px;
+    background: #FFFFFF;
+}
+#pop.add_pallet_type > h6,
+#pop.add_supplier_type > h6 {
+    margin: 0px 0px 16px;
+}
+#pop.add_pallet_type > h5,
+#pop.add_supplier_type > h5 {
+    padding-right: 26px;
+}
+.add_pallet_type > input,
+.add_supplier_type > input {
+    width: 200px;
+    height: 36px;
+}

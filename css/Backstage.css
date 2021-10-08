@@ -1,0 +1,194 @@
+/*離職狀態*/
+table tr.resign {
+    background-color: #3c4657;
+    color: #cac7c6;
+    font-family: 'Microsoft JhengHei';
+    font-weight: 300;
+}
+/*list*/
+table tr {
+    background-color: #4F5D75;
+    color: #fefcfb;
+    font-family: 'Microsoft JhengHei';
+    font-weight: 300;
+}
+table tr >td:nth-child(1){ /*使用者帳號*/
+    width: 200px;
+    height: 48px;
+    border-radius: 6px 0px 0px 6px;
+    padding-left: 12px;
+}
+table tr >td:nth-child(2){ /*使用者名稱*/
+    width: 300px;
+    padding-left: 10px;
+}
+table tr >td:nth-child(3){ /*信箱*/
+    width: 400px;
+    border-radius: 0px 6px 6px 0px;
+}
+
+/*detail*/
+.detail {
+    background-color: #fefcfb;
+    color: #4F5D75;
+    font-family: 'Microsoft JhengHei';
+    font-weight: 400;
+    display: inline-block;
+    width: 900px;
+    padding: 20px 23px;
+    border-radius: 2px 2px 6px 6px;
+}
+.detail input {
+    height: 22px;
+    outline: transparent;
+    border: transparent;
+    background: #FFFFFF;
+    border-bottom: 1px solid #BFC0C0;
+    color: #4F5D75;
+    font-size: 16px;
+    caret-color: #87BBA2;
+    padding-left: 8px;
+    margin-left: 8px;
+}
+.detail input:focus{
+    border-bottom: 1px solid #87BBA2;
+    box-shadow: 0px 1px 0px #87BBA2;
+    color: #648F84;
+}
+[readonly="readonly"] {
+    pointer-events: none;
+}
+.detail td{
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 40px;
+}
+/*btn*/
+.edit_userdata,
+.edit_pm,
+.add_pm{
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+.edit_userdata > .fa-edit::before,
+.edit_pm > .fa-edit::before,
+.add_pm > .fa-add::before{
+    margin: 0;
+    opacity: 1;
+    background-color: #BFC0C0;
+    color: #4F5D75;
+    font-size: 26px;
+    border-radius: 20px;
+    padding: 4px;
+}
+.edit_userdata > .fa-edit:hover:before,
+.edit_pm > .fa-edit:hover:before,
+.add_pm > .fa-add:hover:before{
+    background-color: #648F84;
+    color: #C9E4CA;
+}
+.edit_userdata.active > .fa-edit::before,
+.edit_pm.active > .fa-edit::before,
+.add_pm.active > .fa-add::before{
+    background-color: #648F84;
+    color: #C9E4CA;
+}
+/*使用者資訊*/
+.detail td:nth-child(1){
+    width: 80px;
+    height: 40px;
+    padding-left: 0px;
+}
+.detail td:nth-child(2){
+    width: 700px;
+    padding-left: 0px;
+}
+.detail td:nth-child(3),
+.detail td:nth-child(4),
+.detail td:nth-child(5){
+    width: 160px;
+}
+.detail td:nth-child(3) > input,
+.detail td:nth-child(4) > input,
+.detail td:nth-child(5) > input{
+    width: 100px;
+}
+.detail td:nth-child(6){
+    width: 340px;
+}
+.detail td:nth-child(6) > input{
+    width: 260px;
+}
+/*使用者權限*/
+.detail td:nth-child(7){
+    width: 80px;
+    height: 40px;
+    padding-left: 0px;
+}
+.detail td:nth-child(8){
+    width: 700px;
+}
+.detail td:nth-child(9){
+    width: 854px;
+    height: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 8px 0px;
+    overflow: unset;
+    line-height: unset;
+}
+.detail td:nth-child(9) > span {
+    padding: 2px 8px ;
+    margin: 0px 8px ;
+    border-bottom: 1px #87BBA2 solid;
+    display: flex;
+    align-items: center;
+}
+.detail td:nth-child(9) > span > .fa-close::before{
+    margin-right: 0px;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    color: #BFC0C0;
+    opacity: 1;
+}
+.detail td:nth-child(9) > span:hover > .fa-close::before{
+    color: #648F84;
+}
+.detail td:nth-child(10){
+    width: 854px;
+    height: 50px;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.detail td:nth-child(10) > span {
+    width: 80px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 4px;
+    cursor: pointer;
+}
+.detail td:nth-child(10) > .resign_user,
+.detail td:nth-child(10) > .resume_user { /*離職btn*/
+    background-color: #e9c46a;
+}
+.detail td:nth-child(10) > .delet_user{ /*刪除btn*/
+    background-color: #90be6d;
+    margin-left: 16px;
+}
+.detail td:nth-child(10) > span > .fa-bye,
+.detail td:nth-child(10) > span > .fa-grave,
+.detail td:nth-child(10) > span > .fa-baby{
+    font-size: 24px;
+    font-weight: 600;
+}

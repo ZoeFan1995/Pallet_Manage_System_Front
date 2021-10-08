@@ -1,0 +1,144 @@
+/*list*/
+table tr {
+    background-color: #4F5D75;
+    color: #fefcfb;
+    font-family: 'Microsoft JhengHei';
+    font-weight: 300;
+}
+table tr >td:nth-child(1){
+    width: 64px;
+    text-align: right;
+    height: 48px;
+    border-radius: 6px 0px 0px 6px;
+}
+table tr >td:nth-child(2){
+    width: 72px;
+}
+table tr >td:nth-child(3){
+    width: 140px;
+}
+table tr >td:nth-child(4){
+    width: 160px;
+}
+table tr >td:nth-child(5){
+    width: 490px;
+    border-radius: 0px 6px 6px 0px;
+}
+
+/*detail*/
+.detail {
+    background-color: #fefcfb;
+    color: #4F5D75;
+    font-family: 'Microsoft JhengHei';
+    font-weight: 400;
+    display: inline-block;
+    width: 926px;
+    padding: 20px 23px;
+    border-radius: 2px 2px 6px 6px;
+}
+.detail input {
+    height: 22px;
+    outline: transparent;
+    border: transparent;
+    background: #FFFFFF;
+    border-bottom: 1px solid #BFC0C0;
+    color: #4F5D75;
+    font-size: 16px;
+    caret-color: #87BBA2;
+    padding-left: 8px;
+    margin-left: 8px;
+}
+.detail input:focus{
+    border-bottom: 1px solid #87BBA2;
+    box-shadow: 0px 1px 0px #87BBA2;
+    color: #648F84;
+}
+[readonly="readonly"] {
+    pointer-events: none;
+}
+/*不可編輯color*/
+.detail td:nth-child(1) > input{
+    color: #BFC0C0;
+}
+.detail td{
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+    height: 40px;
+}
+/*廠商代號 廠商名稱 電話 棧板基量*/
+.detail td:nth-child(1) { /*廠商代號*/
+    width: 210px;
+    height: 40px;
+}
+.detail td:nth-child(2){ /*廠商名稱*/
+    width: 460px;
+}
+/*.detail td:nth-child(3){ 電話
+    width: 200px;
+}*/
+.detail td:nth-child(3){ /*廠商類型*/
+    width: 220px;
+}
+.detail td:nth-child(4){ /*棧板基量*/
+    width: 160px;
+}
+.detail td:nth-child(1) > input{
+    width: 128px;
+}
+.detail td:nth-child(2) > input{
+    width: 380px;
+}
+/* .detail td:nth-child(3) > input{
+    width: 142px;
+} */
+.detail td:nth-child(3) > input{
+    width: 140px;
+}
+.detail td:nth-child(4) > input{
+    width: 80px;
+}
+/*廠商類型 select*/
+.detail td:nth-child(3) > select {
+    width: 140px;
+    height: 34px;
+    margin-left: 8px;
+    font-size: 16px;
+    color: #4F5D75;
+    outline: unset;
+    border: 1px #87BBA2 solid;
+    border-radius: 4px;
+    transition: all .3s;
+}
+.detail td:nth-child(3) > select:focus {
+    box-shadow: 0px 0px 3px #87BBA2;
+}
+/*備註*/
+.detail td:nth-child(6) {
+    width: 880px;
+    height: 40px;
+}
+.detail td:nth-child(6) > input{
+    width: 840px;
+}
+/*在庫棧板數量*/
+.detail td:nth-child(5) {
+    width: 880px;
+    height: 100%;
+    display: inline-flex;
+    align-items: flex-start;
+    margin: 8px 0px ;
+    color:  #457B9D;
+}
+.detail td:nth-child(5) > div {
+    width: 784px;
+    height: 100%;
+    font-weight: 600;
+    display: flex;
+    flex-wrap: wrap;
+}
+.detail td:nth-child(5) > div > span {
+    padding: 0px 8px 2px;
+    margin: 0px 8px 4px;
+    border-bottom: 1px #87BBA2 solid;
+}
